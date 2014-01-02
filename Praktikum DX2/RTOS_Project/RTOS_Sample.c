@@ -36,6 +36,26 @@ Tim Asisten Sistem Tertanam 2011
 #define TICKS_PER_MS 5
 
 
+static unsigned char notes[] = {
+0,90,80,71,67,60,53,47,45,40,36,34,30,27,24,22,20,18,17,15,13,12,11};
+
+static unsigned int song1[] = {
+1,2,3,4,5,3,1,1,1,
+6,8,7,6,5,5,5,
+4,6,5,4,3,1,1,1,
+2,4,3,2,1,1,1};
+
+static unsigned int song2[] = {
+3, 6, 7, 8, 6, 7, 8, 7, 5, 5, 5,
+3, 4, 4, 5, 6, 5, 4, 3, 3, 3,
+3, 2, 2, 2, 2, 6, 4, 3, 4, 3, 2, 1, 1, 1,
+3, 6, 6, 6, 6, 7, 8, 7, 7, 7, 7, 7,
+3, 6, 7, 8, 6, 7, 8, 7, 5, 5, 5,
+3, 4, 4, 5, 6, 5, 4, 3, 3, 3,
+3, 2, 2, 2, 2, 6, 4, 3, 4, 3, 2, 1, 1, 1,
+3, 6, 7, 8, 7, 8, 7, 6, 6, 6, 6, 6, 6, 6, 6};
+
+
 //###################STATE##########################
 static int current_lcd_state = 3;
 static int current_state = 1;
@@ -43,6 +63,41 @@ static int led_current_state = 0;
 static int switchinput = 0;
 static int second = 0;
 static int firstsrand = 0;
+static int global_sonar_cm = 0;
+
+
+/** 	
+This task plays a series of musical notes in order to produce a "song"
+*/
+void vMusicTask( void * pvParameters ){
+	int i;
+	DDRB = 0x11111100;
+	//DDRB = 0xFF;
+
+
+	/** 
+	Timer/Counter 0
+	Clock value = 11.719 KHz
+	Mode = CTC top=OCR0
+	OC0 output: Toggle on compare match
+	*/
+	TCCR0=0x1A;
+	TCNT0=0x00;
+	OCR0=0x00;
+
+	while(1){
+		for(i=0; i<31; i++){
+			// Set the new desired frequency
+			OCR0 = notes[song2[i]+8];
+
+			// Delay for half a second
+			vTaskDelay(10 * TICKS_PER_MS);
+		}
+	}
+}
+
+
+
 
 
 
@@ -52,7 +107,7 @@ static int firstsrand = 0;
 This task measures distance using the SRF08 every 100 ms 
 and display the result in cm to LCD
 */
-int global_sonar_cm = 0;
+
 void vSonarTask( void * pvParameters )
 {
     char lcd[16];
@@ -157,8 +212,8 @@ void vLCDTask( void * pvParameters) {
 void vLEDTask ( void * pvParameters ) {
 	int current = 0;
 	// Set PORTB as LED output //
-	DDRB = 0xFF;
-	PORTB = current;
+	DDRD = 0xFF;
+	PORTD = current;
 	led_current_state = LED_START;
 	while (1) {
 		if(led_current_state == LED_STOP){
@@ -179,38 +234,38 @@ void vLEDTask ( void * pvParameters ) {
 				current = current << 1;
 			}
 		}
-		PORTB = current ^ 0b11111111;
+		PORTD = current ^ 0b11111111;
 		vTaskDelay(20 * TICKS_PER_MS);
 	}
 }
 
 
 void vInputTask(void *pvParameters){
-	DDRD = 0x11111100;
+	DDRB = 0x11111100;
 	while(1){
-		int input = PIND;
+		int input = PINB;
 		if(current_state == STARTSCREEN){
-			if(input == 0b11111110){
+			if(((~input) & 0b00000001) == 1){
 				clear_lcd();
 				current_state = LOADING;
 				second = 0;
 				
-			}else if(input == 0b11111101){
+			}else if(((~input) & 0b00000010) == 0b00000010){
 				clear_lcd();
 				current_state = HISCORESCREEN;
 			}
 		}else if(current_state == HISCORESCREEN){
-			if(input == 0b11111110){
+			if(((~input) & 0b00000001) == 1){
 				clear_lcd();
 				current_state = STARTSCREEN;
 			}
 		}else if(current_state == GAME){
-			if(input == 0b11111110){
+			if(((~input) & 0b00000001) == 1){
 				set_mario(1);
-			}else if(input == 0b11111101){
+			}else if(((~input) & 0b00000010) == 0b00000010){
 				set_mario(0);
 			}
-		}else if(current_state==RESULT && input == 0b11111110){
+		}else if(current_state==RESULT && (((~input) & 0b00000001) == 1)){
 			clear_lcd();
 			led_current_state = LED_STOP;
 			current_lcd_state = LCD_EMPTY;
@@ -349,7 +404,7 @@ int main(){
 	xTaskCreate( vLEDTask, "LED", 100, NULL, tskIDLE_PRIORITY, &xLEDTaskHandle);
 	xTaskCreate( vSonarTask, "Sonar", 100, NULL , tskIDLE_PRIORITY, &xSonarTaskHandle );
 	xTaskCreate( vInputTask, "Input", 100, NULL , tskIDLE_PRIORITY, &xInputTaskHandle );
-
+	xTaskCreate( vMusicTask, "Sound", 100, NULL , tskIDLE_PRIORITY, &xMusicTaskHandle );
 
 	// Start the scheduler
 	vTaskStartScheduler();

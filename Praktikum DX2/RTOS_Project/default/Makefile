@@ -37,7 +37,7 @@ HEX_EEPROM_FLAGS += --change-section-lma .eeprom=0 --no-change-warnings
 
 
 ## Include Directories
-INCLUDES = -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\Praktikum DX2\RTOS_Project\." -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\Praktikum DX2\RTOS_Project\Kernel\include" -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\Praktikum DX2\RTOS_Project\Kernel\portable\GCC\ATMega323" -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\Praktikum DX2\RTOS_Project\i2c" -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\Praktikum DX2\RTOS_Project\srf" 
+INCLUDES = -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\UAS GIT\Praktikum DX2\RTOS_Project\." -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\UAS GIT\Praktikum DX2\RTOS_Project\Kernel\include" -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\UAS GIT\Praktikum DX2\RTOS_Project\Kernel\portable\GCC\ATMega323" -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\UAS GIT\Praktikum DX2\RTOS_Project\i2c" -I"E:\MATERI\TERM7\embedded\TUGAS\Tugas UAS\UAS GIT\Praktikum DX2\RTOS_Project\srf" 
 
 ## Objects that must be built in order to link
 OBJECTS = RTOS_Sample.o croutine.o list.o queue.o tasks.o timers.o port.o heap_1.o i2c.o lcd.o game.o 

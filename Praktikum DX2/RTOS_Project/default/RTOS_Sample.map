@@ -160,7 +160,7 @@ LOAD c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x66d0
+.text           0x00000000     0x66fc
  *(.vectors)
  .vectors       0x00000000       0x54 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vector_default
@@ -238,169 +238,170 @@ LOAD c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5
                 0x0000428e                __vector_16
                 0x0000428e                __vector_18
                 0x0000428e                __vector_20
- .text          0x00004292      0x62c RTOS_Sample.o
+ .text          0x00004292      0x658 RTOS_Sample.o
                 0x00004292                vMainGameTask
                 0x0000442e                vLEDTask
                 0x000044c8                vInputTask
-                0x0000458e                vLCDTask
-                0x000046f4                vSonarTask
-                0x00004740                vServoTask
-                0x000047be                main
- .text          0x000048be      0x3b0 croutine.o
-                0x000048be                xCoRoutineCreate
-                0x000049c4                vCoRoutineAddToDelayedList
-                0x00004a3e                vCoRoutineSchedule
-                0x00004c24                xCoRoutineRemoveFromEventList
- .text          0x00004c6e      0x124 list.o
-                0x00004c6e                vListInitialise
-                0x00004c8a                vListInitialiseItem
-                0x00004c92                vListInsertEnd
-                0x00004cdc                vListInsert
-                0x00004d4a                vListRemove
- .text          0x00004d92      0x61a queue.o
-                0x00004e12                xQueueCreate
-                0x00004ed2                xQueueGenericSend
-                0x0000508e                xQueueGenericSendFromISR
-                0x0000514c                xQueueGenericReceive
-                0x000052e2                xQueueReceiveFromISR
-                0x00005362                uxQueueMessagesWaiting
-                0x00005372                uxQueueMessagesWaitingFromISR
-                0x00005378                vQueueDelete
-                0x00005392                xQueueIsQueueEmptyFromISR
-                0x0000539e                xQueueIsQueueFullFromISR
- .text          0x000053ac      0x82c tasks.o
-                0x00005428                xTaskGenericCreate
-                0x00005642                vTaskStartScheduler
-                0x00005698                vTaskEndScheduler
-                0x000056a4                vTaskSuspendAll
-                0x000056b0                xTaskGetTickCount
-                0x000056c6                xTaskGetTickCountFromISR
-                0x000056d2                uxTaskGetNumberOfTasks
-                0x000056d8                vTaskIncrementTick
-                0x0000581c                xTaskResumeAll
-                0x0000591a                vTaskDelay
-                0x00005962                vTaskDelayUntil
-                0x000059e2                vTaskSwitchContext
-                0x00005a86                vTaskPlaceOnEventList
-                0x00005ac0                xTaskRemoveFromEventList
-                0x00005b44                vTaskSetTimeOutState
-                0x00005b5a                xTaskCheckForTimeOut
-                0x00005bd0                vTaskMissedYield
- .text          0x00005bd8        0x0 timers.o
- .text          0x00005bd8      0x26e port.o
-                0x00005bd8                pxPortInitialiseStack
-                0x00005c6c                xPortStartScheduler
-                0x00005cd6                vPortEndScheduler
-                0x00005cd8                vPortYield
-                0x00005d8a                vPortYieldFromTick
-                0x00005e40                __vector_7
- .text          0x00005e46       0x72 heap_1.o
-                0x00005e46                pvPortMalloc
-                0x00005e98                vPortFree
-                0x00005e9a                vPortInitialiseBlocks
-                0x00005ea4                xPortGetFreeHeapSize
- .text          0x00005eb8       0x80 i2c.o
-                0x00005eb8                i2c_transmit
-                0x00005eec                i2cRead
- .text          0x00005f38      0x12e lcd.o
-                0x00005f38                lcdSiap
-                0x00005f50                lcdWait
-                0x00005f5a                kirim_perintah_lcd
-                0x00005f82                init_lcd
-                0x00005fb4                clear_lcd
-                0x00005fc8                set_cursor
-                0x00005fda                tulis_data_ram_lcd
-                0x00006002                tulis_string
-                0x00006050                tulis_data_at
- .text          0x00006066      0x32a game.o
-                0x00006066                setup_seed
-                0x0000609a                init_game
-                0x00006170                update_game
-                0x000062b0                draw_game
-                0x0000634c                set_mario
-                0x00006368                get_mario
-                0x00006372                get_state
-                0x0000637c                getpass
-                0x00006386                set_mode
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodhi4.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodhi4.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memset.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strncpy.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(ltoa.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega32.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega32.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strrev.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega32.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_mulsi3.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodsi4.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodsi4.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_prologue.o)
- .text          0x00006390        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_epilogue.o)
-                0x00006390                . = ALIGN (0x2)
+                0x0000457e                vLCDTask
+                0x000046e4                vSonarTask
+                0x00004730                vMusicTask
+                0x0000476c                vServoTask
+                0x000047ea                main
+ .text          0x000048ea      0x3b0 croutine.o
+                0x000048ea                xCoRoutineCreate
+                0x000049f0                vCoRoutineAddToDelayedList
+                0x00004a6a                vCoRoutineSchedule
+                0x00004c50                xCoRoutineRemoveFromEventList
+ .text          0x00004c9a      0x124 list.o
+                0x00004c9a                vListInitialise
+                0x00004cb6                vListInitialiseItem
+                0x00004cbe                vListInsertEnd
+                0x00004d08                vListInsert
+                0x00004d76                vListRemove
+ .text          0x00004dbe      0x61a queue.o
+                0x00004e3e                xQueueCreate
+                0x00004efe                xQueueGenericSend
+                0x000050ba                xQueueGenericSendFromISR
+                0x00005178                xQueueGenericReceive
+                0x0000530e                xQueueReceiveFromISR
+                0x0000538e                uxQueueMessagesWaiting
+                0x0000539e                uxQueueMessagesWaitingFromISR
+                0x000053a4                vQueueDelete
+                0x000053be                xQueueIsQueueEmptyFromISR
+                0x000053ca                xQueueIsQueueFullFromISR
+ .text          0x000053d8      0x82c tasks.o
+                0x00005454                xTaskGenericCreate
+                0x0000566e                vTaskStartScheduler
+                0x000056c4                vTaskEndScheduler
+                0x000056d0                vTaskSuspendAll
+                0x000056dc                xTaskGetTickCount
+                0x000056f2                xTaskGetTickCountFromISR
+                0x000056fe                uxTaskGetNumberOfTasks
+                0x00005704                vTaskIncrementTick
+                0x00005848                xTaskResumeAll
+                0x00005946                vTaskDelay
+                0x0000598e                vTaskDelayUntil
+                0x00005a0e                vTaskSwitchContext
+                0x00005ab2                vTaskPlaceOnEventList
+                0x00005aec                xTaskRemoveFromEventList
+                0x00005b70                vTaskSetTimeOutState
+                0x00005b86                xTaskCheckForTimeOut
+                0x00005bfc                vTaskMissedYield
+ .text          0x00005c04        0x0 timers.o
+ .text          0x00005c04      0x26e port.o
+                0x00005c04                pxPortInitialiseStack
+                0x00005c98                xPortStartScheduler
+                0x00005d02                vPortEndScheduler
+                0x00005d04                vPortYield
+                0x00005db6                vPortYieldFromTick
+                0x00005e6c                __vector_7
+ .text          0x00005e72       0x72 heap_1.o
+                0x00005e72                pvPortMalloc
+                0x00005ec4                vPortFree
+                0x00005ec6                vPortInitialiseBlocks
+                0x00005ed0                xPortGetFreeHeapSize
+ .text          0x00005ee4       0x80 i2c.o
+                0x00005ee4                i2c_transmit
+                0x00005f18                i2cRead
+ .text          0x00005f64      0x12e lcd.o
+                0x00005f64                lcdSiap
+                0x00005f7c                lcdWait
+                0x00005f86                kirim_perintah_lcd
+                0x00005fae                init_lcd
+                0x00005fe0                clear_lcd
+                0x00005ff4                set_cursor
+                0x00006006                tulis_data_ram_lcd
+                0x0000602e                tulis_string
+                0x0000607c                tulis_data_at
+ .text          0x00006092      0x32a game.o
+                0x00006092                setup_seed
+                0x000060c6                init_game
+                0x0000619c                update_game
+                0x000062dc                draw_game
+                0x00006378                set_mario
+                0x00006394                get_mario
+                0x0000639e                get_state
+                0x000063a8                getpass
+                0x000063b2                set_mode
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodhi4.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memset.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strncpy.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(ltoa.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega32.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega32.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega32.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_mulsi3.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodsi4.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_prologue.o)
+ .text          0x000063bc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_epilogue.o)
+                0x000063bc                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00006390       0x26 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodhi4.o)
-                0x00006390                _div
-                0x00006390                __divmodhi4
- .text.libgcc   0x000063b6        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000063b6        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x000063b6        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x000063b6       0x28 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodhi4.o)
-                0x000063b6                __udivmodhi4
+ .text.libgcc   0x000063bc       0x26 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodhi4.o)
+                0x000063bc                _div
+                0x000063bc                __divmodhi4
+ .text.libgcc   0x000063e2        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000063e2        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000063e2        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000063e2       0x28 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodhi4.o)
+                0x000063e2                __udivmodhi4
  .text.avr-libc
-                0x000063de       0xa8 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
-                0x00006460                rand_r
-                0x00006466                rand
-                0x00006470                srand
+                0x0000640a       0xa8 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+                0x0000648c                rand_r
+                0x00006492                rand
+                0x0000649c                srand
  .text.avr-libc
-                0x00006486       0x12 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
-                0x00006486                memcpy
+                0x000064b2       0x12 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                0x000064b2                memcpy
  .text.avr-libc
-                0x00006498        0xe c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memset.o)
-                0x00006498                memset
+                0x000064c4        0xe c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memset.o)
+                0x000064c4                memset
  .text.avr-libc
-                0x000064a6       0x1e c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strncpy.o)
-                0x000064a6                strncpy
+                0x000064d2       0x1e c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strncpy.o)
+                0x000064d2                strncpy
  .text.avr-libc
-                0x000064c4       0x68 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(ltoa.o)
-                0x000064c4                ltoa
+                0x000064f0       0x68 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(ltoa.o)
+                0x000064f0                ltoa
  .text.avr-libc
-                0x0000652c        0xc c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega32.o)
-                0x0000652c                __eerd_word_m32
+                0x00006558        0xc c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega32.o)
+                0x00006558                __eerd_word_m32
  .text.avr-libc
-                0x00006538        0xc c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega32.o)
-                0x00006538                __eeupd_word_m32
+                0x00006564        0xc c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega32.o)
+                0x00006564                __eeupd_word_m32
  .text.avr-libc
-                0x00006544       0x20 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strrev.o)
-                0x00006544                strrev
+                0x00006570       0x20 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strrev.o)
+                0x00006570                strrev
  .text.avr-libc
-                0x00006564       0x20 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega32.o)
-                0x00006564                __eerd_block_m32
-                0x00006568                __eerd_blraw_m32
+                0x00006590       0x20 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega32.o)
+                0x00006590                __eerd_block_m32
+                0x00006594                __eerd_blraw_m32
  .text.avr-libc
-                0x00006584       0x22 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32.o)
-                0x00006584                __eeupd_byte_m32
-                0x00006586                __eeupd_r18_m32
- .text.libgcc   0x000065a6       0x3e c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_mulsi3.o)
-                0x000065a6                __mulsi3
- .text.libgcc   0x000065e4       0x44 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodsi4.o)
-                0x000065e4                __udivmodsi4
- .text.libgcc   0x00006628       0x36 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodsi4.o)
-                0x00006628                __divmodsi4
- .text.libgcc   0x0000665e       0x38 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_prologue.o)
-                0x0000665e                __prologue_saves__
- .text.libgcc   0x00006696       0x36 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_epilogue.o)
-                0x00006696                __epilogue_restores__
-                0x000066cc                . = ALIGN (0x2)
+                0x000065b0       0x22 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32.o)
+                0x000065b0                __eeupd_byte_m32
+                0x000065b2                __eeupd_r18_m32
+ .text.libgcc   0x000065d2       0x3e c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_mulsi3.o)
+                0x000065d2                __mulsi3
+ .text.libgcc   0x00006610       0x44 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodsi4.o)
+                0x00006610                __udivmodsi4
+ .text.libgcc   0x00006654       0x36 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodsi4.o)
+                0x00006654                __divmodsi4
+ .text.libgcc   0x0000668a       0x38 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_prologue.o)
+                0x0000668a                __prologue_saves__
+ .text.libgcc   0x000066c2       0x36 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_epilogue.o)
+                0x000066c2                __epilogue_restores__
+                0x000066f8                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000066cc        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
-                0x000066cc                _exit
-                0x000066cc                exit
+ .fini9         0x000066f8        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+                0x000066f8                _exit
+                0x000066f8                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -419,104 +420,104 @@ LOAD c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000066cc        0x4 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .fini0         0x000066f8        0x4 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x000066d0                _etext = .
+                0x000066fc                _etext = .
 
-.data           0x00800060       0x6a load address 0x000066d0
+.data           0x00800060      0x144 load address 0x000066fc
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm32.o
- .data          0x00800060       0x5b RTOS_Sample.o
+ .data          0x00800060      0x134 RTOS_Sample.o
                 0x008000b5                sample_length
- .data          0x008000bb        0x0 croutine.o
- .data          0x008000bb        0x0 list.o
- .data          0x008000bb        0x0 queue.o
- .data          0x008000bb        0x7 tasks.o
- .data          0x008000c2        0x0 timers.o
- .data          0x008000c2        0x0 port.o
- .data          0x008000c2        0x0 heap_1.o
- .data          0x008000c2        0x0 i2c.o
- .data          0x008000c2        0x0 lcd.o
- .data          0x008000c2        0x4 game.o
- .data          0x008000c6        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodhi4.o)
- .data          0x008000c6        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
- .data          0x008000c6        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
- .data          0x008000c6        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
- .data          0x008000c6        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodhi4.o)
- .data          0x008000c6        0x4 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memset.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strncpy.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(ltoa.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega32.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega32.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strrev.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega32.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_mulsi3.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodsi4.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodsi4.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_prologue.o)
- .data          0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_epilogue.o)
+ .data          0x00800194        0x0 croutine.o
+ .data          0x00800194        0x0 list.o
+ .data          0x00800194        0x0 queue.o
+ .data          0x00800194        0x7 tasks.o
+ .data          0x0080019b        0x0 timers.o
+ .data          0x0080019b        0x0 port.o
+ .data          0x0080019b        0x0 heap_1.o
+ .data          0x0080019b        0x0 i2c.o
+ .data          0x0080019b        0x0 lcd.o
+ .data          0x0080019b        0x4 game.o
+ .data          0x0080019f        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodhi4.o)
+ .data          0x0080019f        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .data          0x0080019f        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .data          0x0080019f        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .data          0x0080019f        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodhi4.o)
+ .data          0x0080019f        0x4 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memset.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strncpy.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(ltoa.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega32.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega32.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega32.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_mulsi3.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodsi4.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodsi4.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_prologue.o)
+ .data          0x008001a3        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_epilogue.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x008000ca                . = ALIGN (0x2)
-                0x008000ca                _edata = .
-                0x008000ca                PROVIDE (__data_end, .)
+                0x008001a4                . = ALIGN (0x2)
+ *fill*         0x008001a3        0x1 00
+                0x008001a4                _edata = .
+                0x008001a4                PROVIDE (__data_end, .)
 
-.bss            0x008000ca      0x698
-                0x008000ca                PROVIDE (__bss_start, .)
+.bss            0x008001a4      0x698
+                0x008001a4                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x008000ca        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm32.o
- .bss           0x008000ca        0x8 RTOS_Sample.o
-                0x008000ca                global_sonar_cm
- .bss           0x008000d2       0x3a croutine.o
-                0x008000d2                pxCurrentCoRoutine
- .bss           0x0080010c        0x0 list.o
- .bss           0x0080010c        0x0 queue.o
- .bss           0x0080010c       0x50 tasks.o
-                0x0080010c                pxCurrentTCB
- .bss           0x0080015c        0x0 timers.o
- .bss           0x0080015c        0x0 port.o
- .bss           0x0080015c      0x5de heap_1.o
- .bss           0x0080073a        0x0 i2c.o
- .bss           0x0080073a        0x0 lcd.o
- .bss           0x0080073a       0x28 game.o
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodhi4.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodhi4.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memset.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strncpy.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(ltoa.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega32.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega32.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strrev.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega32.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_mulsi3.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodsi4.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodsi4.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_prologue.o)
- .bss           0x00800762        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_epilogue.o)
+ .bss           0x008001a4        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5/crtm32.o
+ .bss           0x008001a4        0x8 RTOS_Sample.o
+ .bss           0x008001ac       0x3a croutine.o
+                0x008001ac                pxCurrentCoRoutine
+ .bss           0x008001e6        0x0 list.o
+ .bss           0x008001e6        0x0 queue.o
+ .bss           0x008001e6       0x50 tasks.o
+                0x008001e6                pxCurrentTCB
+ .bss           0x00800236        0x0 timers.o
+ .bss           0x00800236        0x0 port.o
+ .bss           0x00800236      0x5de heap_1.o
+ .bss           0x00800814        0x0 i2c.o
+ .bss           0x00800814        0x0 lcd.o
+ .bss           0x00800814       0x28 game.o
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodhi4.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_exit.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_copy_data.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodhi4.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memcpy.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(memset.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strncpy.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(ltoa.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_word_atmega32.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_word_atmega32.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(strrev.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eerd_block_atmega32.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(eeupd_byte_atmega32.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_mulsi3.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_udivmodsi4.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_divmodsi4.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_prologue.o)
+ .bss           0x0080083c        0x0 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/avr5\libgcc.a(_epilogue.o)
  *(.bss*)
  *(COMMON)
-                0x00800762                PROVIDE (__bss_end, .)
-                0x000066d0                __data_load_start = LOADADDR (.data)
-                0x0000673a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0080083c                PROVIDE (__bss_end, .)
+                0x000066fc                __data_load_start = LOADADDR (.data)
+                0x00006840                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800762        0x0
-                0x00800762                PROVIDE (__noinit_start, .)
+.noinit         0x0080083c        0x0
+                0x0080083c                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x00800762                PROVIDE (__noinit_end, .)
-                0x00800762                _end = .
-                0x00800762                PROVIDE (__heap_start, .)
+                0x0080083c                PROVIDE (__noinit_end, .)
+                0x0080083c                _end = .
+                0x0080083c                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -613,131 +614,131 @@ LOAD c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5
                 0x00000140       0x38 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
 
 .debug_pubnames
-                0x00000000      0x6f5
+                0x00000000      0x6f0
  *(.debug_pubnames)
  .debug_pubnames
-                0x00000000       0xaa RTOS_Sample.o
+                0x00000000       0xa5 RTOS_Sample.o
  .debug_pubnames
-                0x000000aa       0x96 croutine.o
+                0x000000a5       0x96 croutine.o
  .debug_pubnames
-                0x00000140       0x71 list.o
+                0x0000013b       0x71 list.o
  .debug_pubnames
-                0x000001b1      0x111 queue.o
+                0x000001ac      0x111 queue.o
  .debug_pubnames
-                0x000002c2      0x1ac tasks.o
+                0x000002bd      0x1ac tasks.o
  .debug_pubnames
-                0x0000046e       0x8f port.o
+                0x00000469       0x8f port.o
  .debug_pubnames
-                0x000004fd       0x64 heap_1.o
+                0x000004f8       0x64 heap_1.o
  .debug_pubnames
-                0x00000561       0x2f i2c.o
+                0x0000055c       0x2f i2c.o
  .debug_pubnames
-                0x00000590       0xa5 lcd.o
+                0x0000058b       0xa5 lcd.o
  .debug_pubnames
-                0x00000635       0x90 game.o
+                0x00000630       0x90 game.o
  .debug_pubnames
-                0x000006c5       0x30 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+                0x000006c0       0x30 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
 
-.debug_info     0x00000000     0x2c0f
+.debug_info     0x00000000     0x2ca6
  *(.debug_info)
- .debug_info    0x00000000      0x4a4 RTOS_Sample.o
- .debug_info    0x000004a4      0x520 croutine.o
- .debug_info    0x000009c4      0x2a7 list.o
- .debug_info    0x00000c6b      0x7f4 queue.o
- .debug_info    0x0000145f      0xaa9 tasks.o
- .debug_info    0x00001f08       0x6c timers.o
- .debug_info    0x00001f74      0x1e1 port.o
- .debug_info    0x00002155      0x16a heap_1.o
- .debug_info    0x000022bf       0xf8 i2c.o
- .debug_info    0x000023b7      0x456 lcd.o
- .debug_info    0x0000280d      0x2e2 game.o
- .debug_info    0x00002aef      0x120 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .debug_info    0x00000000      0x53b RTOS_Sample.o
+ .debug_info    0x0000053b      0x520 croutine.o
+ .debug_info    0x00000a5b      0x2a7 list.o
+ .debug_info    0x00000d02      0x7f4 queue.o
+ .debug_info    0x000014f6      0xaa9 tasks.o
+ .debug_info    0x00001f9f       0x6c timers.o
+ .debug_info    0x0000200b      0x1e1 port.o
+ .debug_info    0x000021ec      0x16a heap_1.o
+ .debug_info    0x00002356       0xf8 i2c.o
+ .debug_info    0x0000244e      0x456 lcd.o
+ .debug_info    0x000028a4      0x2e2 game.o
+ .debug_info    0x00002b86      0x120 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0xecc
+.debug_abbrev   0x00000000      0xeca
  *(.debug_abbrev)
- .debug_abbrev  0x00000000      0x1ad RTOS_Sample.o
- .debug_abbrev  0x000001ad      0x1d5 croutine.o
- .debug_abbrev  0x00000382       0xd4 list.o
- .debug_abbrev  0x00000456      0x1c0 queue.o
- .debug_abbrev  0x00000616      0x256 tasks.o
- .debug_abbrev  0x0000086c       0x2a timers.o
- .debug_abbrev  0x00000896      0x113 port.o
- .debug_abbrev  0x000009a9      0x10b heap_1.o
- .debug_abbrev  0x00000ab4       0xa1 i2c.o
- .debug_abbrev  0x00000b55      0x1c3 lcd.o
- .debug_abbrev  0x00000d18       0xe7 game.o
- .debug_abbrev  0x00000dff       0xcd c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .debug_abbrev  0x00000000      0x1ab RTOS_Sample.o
+ .debug_abbrev  0x000001ab      0x1d5 croutine.o
+ .debug_abbrev  0x00000380       0xd4 list.o
+ .debug_abbrev  0x00000454      0x1c0 queue.o
+ .debug_abbrev  0x00000614      0x256 tasks.o
+ .debug_abbrev  0x0000086a       0x2a timers.o
+ .debug_abbrev  0x00000894      0x113 port.o
+ .debug_abbrev  0x000009a7      0x10b heap_1.o
+ .debug_abbrev  0x00000ab2       0xa1 i2c.o
+ .debug_abbrev  0x00000b53      0x1c3 lcd.o
+ .debug_abbrev  0x00000d16       0xe7 game.o
+ .debug_abbrev  0x00000dfd       0xcd c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
 
-.debug_line     0x00000000     0x2c1a
+.debug_line     0x00000000     0x2cbd
  *(.debug_line)
- .debug_line    0x00000000      0x6bd RTOS_Sample.o
- .debug_line    0x000006bd      0x3ae croutine.o
- .debug_line    0x00000a6b      0x278 list.o
- .debug_line    0x00000ce3      0x7e6 queue.o
- .debug_line    0x000014c9      0x857 tasks.o
- .debug_line    0x00001d20       0x3e timers.o
- .debug_line    0x00001d5e      0x3e0 port.o
- .debug_line    0x0000213e      0x151 heap_1.o
- .debug_line    0x0000228f      0x1c8 i2c.o
- .debug_line    0x00002457      0x355 lcd.o
- .debug_line    0x000027ac      0x31d game.o
- .debug_line    0x00002ac9      0x151 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .debug_line    0x00000000      0x710 RTOS_Sample.o
+ .debug_line    0x00000710      0x3be croutine.o
+ .debug_line    0x00000ace      0x288 list.o
+ .debug_line    0x00000d56      0x7f6 queue.o
+ .debug_line    0x0000154c      0x867 tasks.o
+ .debug_line    0x00001db3       0x3e timers.o
+ .debug_line    0x00001df1      0x3f0 port.o
+ .debug_line    0x000021e1      0x151 heap_1.o
+ .debug_line    0x00002332      0x1c8 i2c.o
+ .debug_line    0x000024fa      0x355 lcd.o
+ .debug_line    0x0000284f      0x31d game.o
+ .debug_line    0x00002b6c      0x151 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
 
-.debug_frame    0x00000000      0x5b0
+.debug_frame    0x00000000      0x5c0
  *(.debug_frame)
- .debug_frame   0x00000000       0x80 RTOS_Sample.o
- .debug_frame   0x00000080       0x50 croutine.o
- .debug_frame   0x000000d0       0x60 list.o
- .debug_frame   0x00000130       0xc0 queue.o
- .debug_frame   0x000001f0      0x140 tasks.o
- .debug_frame   0x00000330       0x70 port.o
- .debug_frame   0x000003a0       0x50 heap_1.o
- .debug_frame   0x000003f0       0x30 i2c.o
- .debug_frame   0x00000420       0xa0 lcd.o
- .debug_frame   0x000004c0       0xa0 game.o
- .debug_frame   0x00000560       0x50 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .debug_frame   0x00000000       0x90 RTOS_Sample.o
+ .debug_frame   0x00000090       0x50 croutine.o
+ .debug_frame   0x000000e0       0x60 list.o
+ .debug_frame   0x00000140       0xc0 queue.o
+ .debug_frame   0x00000200      0x140 tasks.o
+ .debug_frame   0x00000340       0x70 port.o
+ .debug_frame   0x000003b0       0x50 heap_1.o
+ .debug_frame   0x00000400       0x30 i2c.o
+ .debug_frame   0x00000430       0xa0 lcd.o
+ .debug_frame   0x000004d0       0xa0 game.o
+ .debug_frame   0x00000570       0x50 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
 
-.debug_str      0x00000000     0x1207
+.debug_str      0x00000000     0x122c
  *(.debug_str)
- .debug_str     0x00000000      0x2d6 RTOS_Sample.o
-                                0x328 (size before relaxing)
- .debug_str     0x000002d6      0x345 croutine.o
-                                0x42a (size before relaxing)
- .debug_str     0x0000061b       0xa4 list.o
-                                0x206 (size before relaxing)
- .debug_str     0x000006bf      0x2fe queue.o
-                                0x491 (size before relaxing)
- .debug_str     0x000009bd      0x485 tasks.o
-                                0x6e0 (size before relaxing)
- .debug_str     0x00000e42       0x13 timers.o
-                                 0xea (size before relaxing)
- .debug_str     0x00000e55       0xd9 port.o
-                                0x1eb (size before relaxing)
- .debug_str     0x00000f2e       0xa9 heap_1.o
-                                0x187 (size before relaxing)
- .debug_str     0x00000fd7       0x34 i2c.o
-                                0x105 (size before relaxing)
- .debug_str     0x0000100b      0x103 lcd.o
-                                0x1e5 (size before relaxing)
- .debug_str     0x0000110e       0x95 game.o
-                                0x180 (size before relaxing)
- .debug_str     0x000011a3       0x64 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .debug_str     0x00000000      0x2fb RTOS_Sample.o
+                                0x34d (size before relaxing)
+ .debug_str     0x000002fb      0x345 croutine.o
+                                0x432 (size before relaxing)
+ .debug_str     0x00000640       0xa4 list.o
+                                0x20e (size before relaxing)
+ .debug_str     0x000006e4      0x2fe queue.o
+                                0x499 (size before relaxing)
+ .debug_str     0x000009e2      0x485 tasks.o
+                                0x6e8 (size before relaxing)
+ .debug_str     0x00000e67       0x13 timers.o
+                                 0xf2 (size before relaxing)
+ .debug_str     0x00000e7a       0xd9 port.o
+                                0x1f3 (size before relaxing)
+ .debug_str     0x00000f53       0xa9 heap_1.o
+                                0x18f (size before relaxing)
+ .debug_str     0x00000ffc       0x34 i2c.o
+                                0x10d (size before relaxing)
+ .debug_str     0x00001030      0x103 lcd.o
+                                0x1ed (size before relaxing)
+ .debug_str     0x00001133       0x95 game.o
+                                0x188 (size before relaxing)
+ .debug_str     0x000011c8       0x64 c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
                                  0xa8 (size before relaxing)
 
-.debug_loc      0x00000000     0x1c76
+.debug_loc      0x00000000     0x1c4a
  *(.debug_loc)
- .debug_loc     0x00000000      0x326 RTOS_Sample.o
- .debug_loc     0x00000326      0x24e croutine.o
- .debug_loc     0x00000574      0x120 list.o
- .debug_loc     0x00000694      0x6a8 queue.o
- .debug_loc     0x00000d3c      0x638 tasks.o
- .debug_loc     0x00001374      0x2d0 port.o
- .debug_loc     0x00001644       0x78 heap_1.o
- .debug_loc     0x000016bc       0x5d i2c.o
- .debug_loc     0x00001719      0x191 lcd.o
- .debug_loc     0x000018aa      0x29f game.o
- .debug_loc     0x00001b49      0x12d c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
+ .debug_loc     0x00000000      0x2fa RTOS_Sample.o
+ .debug_loc     0x000002fa      0x24e croutine.o
+ .debug_loc     0x00000548      0x120 list.o
+ .debug_loc     0x00000668      0x6a8 queue.o
+ .debug_loc     0x00000d10      0x638 tasks.o
+ .debug_loc     0x00001348      0x2d0 port.o
+ .debug_loc     0x00001618       0x78 heap_1.o
+ .debug_loc     0x00001690       0x5d i2c.o
+ .debug_loc     0x000016ed      0x191 lcd.o
+ .debug_loc     0x0000187e      0x29f game.o
+ .debug_loc     0x00001b1d      0x12d c:/program files (x86)/atmel/avr tools/avr toolchain/bin/../lib/gcc/avr/4.5.1/../../../../avr/lib/avr5\libc.a(rand.o)
 
 .debug_macinfo
  *(.debug_macinfo)

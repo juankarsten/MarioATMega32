@@ -14,15 +14,15 @@ RTOS_Sample.o: ../RTOS_Sample.c \
  c:\program\ files\ (x86)\atmel\avr\ tools\avr\ toolchain\bin\../lib/gcc/avr/4.5.1/include/stddef.h \
  c:\program\ files\ (x86)\atmel\avr\ tools\avr\ toolchain\bin\../lib/gcc/avr/4.5.1/../../../../avr/include/stdlib.h \
  c:\program\ files\ (x86)\atmel\avr\ tools\avr\ toolchain\bin\../lib/gcc/avr/4.5.1/../../../../avr/include/avr/pgmspace.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/FreeRTOS.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/projdefs.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\./FreeRTOSConfig.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/portable.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\portable\GCC\ATMega323/portmacro.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/mpu_wrappers.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/task.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/list.h \
- E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\srf/i2c.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/FreeRTOS.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/projdefs.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\./FreeRTOSConfig.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/portable.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\portable\GCC\ATMega323/portmacro.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/mpu_wrappers.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/task.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/list.h \
+ E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\srf/i2c.h \
  ../lcd.h ../sample.c \
  c:\program\ files\ (x86)\atmel\avr\ tools\avr\ toolchain\bin\../lib/gcc/avr/4.5.1/../../../../avr/include/util/delay.h \
  c:\program\ files\ (x86)\atmel\avr\ tools\avr\ toolchain\bin\../lib/gcc/avr/4.5.1/../../../../avr/include/util/delay_basic.h \
@@ -58,23 +58,23 @@ c:\program\ files\ (x86)\atmel\avr\ tools\avr\ toolchain\bin\../lib/gcc/avr/4.5.
 
 c:\program\ files\ (x86)\atmel\avr\ tools\avr\ toolchain\bin\../lib/gcc/avr/4.5.1/../../../../avr/include/avr/pgmspace.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/FreeRTOS.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/FreeRTOS.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/projdefs.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/projdefs.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\./FreeRTOSConfig.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\./FreeRTOSConfig.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/portable.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/portable.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\portable\GCC\ATMega323/portmacro.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\portable\GCC\ATMega323/portmacro.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/mpu_wrappers.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/mpu_wrappers.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/task.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/task.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\Kernel\include/list.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\Kernel\include/list.h:
 
-E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\Praktikum\ DX2\RTOS_Project\srf/i2c.h:
+E:\MATERI\TERM7\embedded\TUGAS\Tugas\ UAS\UAS\ GIT\Praktikum\ DX2\RTOS_Project\srf/i2c.h:
 
 ../lcd.h:
 
