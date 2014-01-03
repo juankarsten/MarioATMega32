@@ -39,6 +39,12 @@ Tim Asisten Sistem Tertanam 2011
 static unsigned char notes[] = {
 0,90,80,71,67,60,53,47,45,40,36,34,30,27,24,22,20,18,17,15,13,12,11};
 
+static unsigned int song1[] = {
+1,2,3,4,5,3,1,1,1,
+6,8,7,6,5,5,5,
+4,6,5,4,3,1,1,1,
+2,4,3,2,1,1,1};
+
 static unsigned int song2[] = {
 3, 6, 7, 8, 6, 7, 8, 7, 5, 5, 5,
 3, 4, 4, 5, 6, 5, 4, 3, 3, 3,
@@ -48,8 +54,6 @@ static unsigned int song2[] = {
 3, 4, 4, 5, 6, 5, 4, 3, 3, 3,
 3, 2, 2, 2, 2, 6, 4, 3, 4, 3, 2, 1, 1, 1,
 3, 6, 7, 8, 7, 8, 7, 6, 6, 6, 6, 6, 6, 6, 6};
-
-static int song3[]={5, 1,1,1,2, 3,3,3,1,4,3,2,7,1,2,1};
 
 
 //###################STATE##########################
@@ -67,8 +71,8 @@ This task plays a series of musical notes in order to produce a "song"
 */
 void vMusicTask( void * pvParameters ){
 	int i;
-	//DDRB = 0x11111100;
-	DDRB = 0xFF;
+	DDRB = 0x11111100;
+	//DDRB = 0xFF;
 
 
 	/** 
@@ -82,14 +86,13 @@ void vMusicTask( void * pvParameters ){
 	OCR0=0x00;
 
 	while(1){
-		for(i=0; i<16; i++){
+		for(i=0; i<31; i++){
 			// Set the new desired frequency
-			OCR0 = notes[song3[i]+8];
+			OCR0 = notes[song2[i]+8];
 
 			// Delay for half a second
 			vTaskDelay(10 * TICKS_PER_MS);
 		}
-		
 	}
 }
 
@@ -121,7 +124,23 @@ void vSonarTask( void * pvParameters )
 		data = i2cRead(0xE0, 2) << 8;
 		data |= i2cRead(0xE0, 3);
 		global_sonar_cm = data;
+		// Convert the data to string
+		//ltoa(data, lcd, 10);
+
+		/*
+		// Clear the LCD
+		init_lcd();
 		
+		// Display the distance to LCD
+		for(i=0; i<16; i++){
+			if(lcd[i]==0){
+				break;
+			}
+			//tulis_data_ram_lcd('E');
+
+			//tulis_data_ram_lcd(lcd[i]);
+		}
+		*/
 		
 		// Delay for another 100 ms
 		vTaskDelay(20 * TICKS_PER_MS);
@@ -142,7 +161,7 @@ void vLCDTask( void * pvParameters) {
 		if (current_lcd_state == LCD_EMPTY){
 			kirim_perintah_lcd(0x01);
 		}else if(current_state == HISCORESCREEN){
-			
+			tulis_string("HISCORE",0,0);
 			int highscore = eeprom_read_word((uint16_t*)46);
 			if(highscore<0){
 				highscore=0;
@@ -150,8 +169,6 @@ void vLCDTask( void * pvParameters) {
 			char lcdstr[16];
 			ltoa(highscore, lcdstr, 10);
 			tulis_string(lcdstr,3,1);
-			//tulis_string("HISCORE",0,0);
-			tulis_string("HISCORE",0,0);
 		}else if(current_state == STARTSCREEN){
 			tulis_string("0.START",0,0);
 			tulis_string("1.HISKOR",0,1);
@@ -224,35 +241,35 @@ void vLEDTask ( void * pvParameters ) {
 
 
 void vInputTask(void *pvParameters){
-	DDRC = 0x11110011;
+	DDRB = 0x11111100;
 	while(1){
-		int input = PINC;
+		int input = PINB;
 		if(current_state == STARTSCREEN){
-			if(((~input) & 0b00000100) > 0){
+			if(((~input) & 0b00000001) == 1){
 				clear_lcd();
 				current_state = LOADING;
 				second = 0;
 				
-			}else if(((~input) & 0b00001000) > 0){
+			}else if(((~input) & 0b00000010) == 0b00000010){
 				clear_lcd();
 				current_state = HISCORESCREEN;
 			}
 		}else if(current_state == HISCORESCREEN){
-			if(((~input) & 0b00000100) > 0){
+			if(((~input) & 0b00000001) == 1){
 				clear_lcd();
 				current_state = STARTSCREEN;
 			}
 		}else if(current_state == GAME){
-			if(((~input) & 0b00000100) > 0){
+			if(((~input) & 0b00000001) == 1){
 				set_mario(1);
-			}else if(((~input) & 0b00001000) > 0){
+			}else if(((~input) & 0b00000010) == 0b00000010){
 				set_mario(0);
 			}
-		}else if(current_state==RESULT && (((~input) & 0b00000100) > 0)){
+		}else if(current_state==RESULT && (((~input) & 0b00000001) == 1)){
 			clear_lcd();
 			led_current_state = LED_STOP;
 			current_lcd_state = LCD_EMPTY;
-			current_state = STARTSCREEN;
+			current_state = LOADING;
 			second = 0;
 		}
 		
@@ -360,48 +377,13 @@ void vMainGameTask(void *pvParameters){
 	
 }
 
-void vPutarServoTask(void* pvParameters) {
-	int i, j, k;
-	DDRC = 0b11110011;
-	//TCCR2 = 0x07;
-	//ASSR = 0x00;
-	while (1) {
-		if (current_state == LOADING) {
-			i = 1;
-			for (k = 0; k < 40; k++) {
-				PORTC |= 0b00010000;
-				for (j = 0; j <= i; j++) {
-					vTaskDelay(1);
-				}
-				PORTC &= 0b11101111;
-		
-				vTaskDelay(10 * TICKS_PER_MS);
-			}
-			vTaskDelay(1);
-		
-			i = 45;
-			for (k = 0; k < 40; k++) {
-				PORTC |= 0b00010000;
-				PORTC &= 0b11101111;
-				for (j = 0; j <= i; j++) {
-					vTaskDelay(1);
-				}
-				PORTC &= 0b11101111;
-			
-				vTaskDelay(10 * TICKS_PER_MS);
-			}
-			vTaskDelay(1);
-		}
-		vTaskDelay(1);		
-	}	
-}
 
 
 
 int main(){
 	// Task Handlers
 	xTaskHandle xSonarTaskHandle, xMusicTaskHandle, xSoundTaskHandle, xLEDTaskHandle, xLCDTaskHandle, xMainGameTaskHandle;
-	xTaskHandle xInputTaskHandle, xPutarServoTaskHandle ;
+	xTaskHandle xInputTaskHandle;
 	
 	/* set the I2C bit rate generator to 100 kb/s */
 	
@@ -419,11 +401,10 @@ int main(){
 	*/
 	xTaskCreate( vMainGameTask, "GAME", 100, NULL, tskIDLE_PRIORITY, &xMainGameTaskHandle);
 	xTaskCreate( vLCDTask, "LCD", 100, NULL, tskIDLE_PRIORITY, &xLCDTaskHandle);
-	xTaskCreate( vLEDTask, "LED", 100, NULL, tskIDLE_PRIORITY, &xLEDTaskHandle);
+	//xTaskCreate( vLEDTask, "LED", 100, NULL, tskIDLE_PRIORITY, &xLEDTaskHandle);
 	xTaskCreate( vSonarTask, "Sonar", 100, NULL , tskIDLE_PRIORITY, &xSonarTaskHandle );
 	xTaskCreate( vInputTask, "Input", 100, NULL , tskIDLE_PRIORITY, &xInputTaskHandle );
 	xTaskCreate( vMusicTask, "Sound", 100, NULL , tskIDLE_PRIORITY, &xMusicTaskHandle );
-	xTaskCreate( vPutarServoTask, "Servo", 100, NULL , tskIDLE_PRIORITY, &xPutarServoTaskHandle );
 
 	// Start the scheduler
 	vTaskStartScheduler();

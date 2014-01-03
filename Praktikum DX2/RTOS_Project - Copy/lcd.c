@@ -56,7 +56,7 @@ void init_lcd (void)
     
     kirim_perintah_lcd(0x06);				//Entry mode set: increment & no display shift
     
-    kirim_perintah_lcd(0x0C);				//Display ON,Cursor OFF & Blink OFF
+    kirim_perintah_lcd(0x0E);				//Display ON,Cursor OFF & Blink OFF
 }
 
 //Clear LCD
@@ -85,14 +85,6 @@ void tulis_data_at(unsigned char data, int x, int y){
 void tulis_string(unsigned char* data, int x, int y){
 	set_cursor(x,y);
 	for(int ii=0; ii<strlen(data); ii++){
-		tulis_data_ram_lcd(data[ii]);
-	}
-
-}
-
-void tulis_string2(unsigned char* data, int x, int y,int datalen){
-	set_cursor(x,y);
-	for(int ii=0; ii<datalen; ii++){
 		tulis_data_ram_lcd(data[ii]);
 	}
 

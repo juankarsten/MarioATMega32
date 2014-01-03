@@ -2,8 +2,8 @@
 #define __lcd_h__
 
 // CONTROL PORT adalah port yang mengontrol RS, EN,dan RW 
-#define LCD_CONTROL_PORT	PORTB
-#define LCD_CONTROL_DDR		DDRB
+#define LCD_CONTROL_PORT	PORTC
+#define LCD_CONTROL_DDR		DDRC
 #define LCD_RS_BIT			5
 #define LCD_EN_BIT			7
 #define LCD_RW_BIT			6
@@ -33,8 +33,6 @@ void set_cursor(int x,int y);
 void tulis_data_at(unsigned char data, int x, int y);
 
 void tulis_string(unsigned char* data, int x, int y);
-
-void tulis_string2(unsigned char* data, int x, int y, int datalen);
 
 #endif
 

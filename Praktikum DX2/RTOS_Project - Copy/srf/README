@@ -1,0 +1,32 @@
+Devantech SRF08 Ultrasonic Ranger Module
+
+This directory contains a complete test program using the Devantech
+SRF08 with the BDMICRO MAVRIC and MAVRIC-II microcontroller boards.
+This program is intended to demonstrate how to use the BDMICRO MAVRIC
+or MAVRIC-II microcontroller boards in conjunction with SRF08
+Ultrasonic Ranger Module.  Feel free to copy the relevent function
+definitions into your own applications and to customize them for your
+needs.
+
+The code is written in C using the GNU GCC C Compiler.  A Makefile is
+provided which is known to work correctly on the FreeBSD Unix
+operating system.
+
+Configuration:
+ 
+  Simply attach your SRF08 Ultrasonic Ranger Module to your board's
+  I2C bus, power, and ground.  It's OK to use one of the supplied VCC
+  pins on your microcontroller board to supply power to the SRF08.
+ 
+  If desired, attach a terminal to UART0 for 9600, 8N1; the SRF08 will
+  be read once per second and the result in inches printed to UART0.
+
+For more information about the MAVRIC and MAVRIC-II microcontroller
+boards, see:
+
+  http://www.bdmicro.com/
+
+For more information about the Devantech SRF08 Ultrasonic Ranger
+Module, see:
+
+  http://www.robot-electronics.co.uk/
