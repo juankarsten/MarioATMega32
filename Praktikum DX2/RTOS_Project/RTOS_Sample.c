@@ -224,7 +224,7 @@ void vLEDTask ( void * pvParameters ) {
 
 
 void vInputTask(void *pvParameters){
-	DDRC = 0x11110011;
+	DDRC = 0b11110011;
 	while(1){
 		int input = PINC;
 		if(current_state == STARTSCREEN){

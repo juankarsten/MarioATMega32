@@ -87,7 +87,7 @@ void update_game(){
 		if(summon_time<=0){
 			int yy =  rand()%2;
 			obstacle[yy][7] = 1;
-			summon_time = rand()%(3-(mode-1))+2;	
+			summon_time = rand()%3+2;	
 		}
 
 		speed++;
